@@ -3,15 +3,14 @@ const cron = require('node-cron');
 const pool = require("./functions/rethinkdb");
 const r = require("rethinkdb");
 const roptions = require("./config.json").roptions;
+const format = require('date-fns/format');
 
 cron.schedule('30 * * * *', () => {
-    var today = new Date();
-    var date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
-    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    var dateTime = date + ' ' + time;
-    console.log(dateTime);
+    console.log(`=====================================================`);
+    console.log(`Started renewing proxies at ${format(new Date(), 'DD-MM-YY HH:mm:ss:SSS')}`);
     init(roptions);
-})
+    console.log(`Stopped renewing proxies at ${format(new Date(), 'DD-MM-YY HH:mm:ss:SSS')}`);
+});
 
 async function init(a) {
     await clearTable();
