@@ -1,0 +1,11 @@
+{
+    "rethinkdb": {
+        "host": "localhost",
+        "port": 28015,
+        "db": "futbot"
+    },
+    "roptions": {
+        "uri": "http://list.didsoft.com/get?email=tjeerd@tjird.nl&pass=7DNhoYPuvK3F5JLD&pid=http1000&https=yes",
+        "headers": { "Cache-Control": "no-cache" }
+    }
+}
