@@ -27,7 +27,7 @@ async function getProxyList(roptions) {
 async function insertProxies(proxyList) {
     for (i = 0; i < proxyList.length; i++) {
         var length = proxyList[i].length - 3;
-        pool.run(r.table("proxies").insert({ address: `${proxyList[i].substring(0, length)}` }));
+        await pool.run(r.table("proxies").insert({ address: `${proxyList[i].substring(0, length)}` }));
     }
 }
 
