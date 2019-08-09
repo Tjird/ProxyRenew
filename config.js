@@ -1,3 +1,5 @@
+const dotenv = require('dotenv');
+dotenv.config();
 module.exports = {
     "rethinkdb": {
         "host": process.env.RDB_HOST,
