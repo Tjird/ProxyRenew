@@ -6,7 +6,7 @@ const r = require("rethinkdb");
 const roptions = require("./config.js").roptions;
 
 
-cron.schedule('15-45 * * * *', () => {
+cron.schedule('15,45 * * * *', () => {
     console.log(`=====================================================`);
     console.log(`Started renewing proxies at ${format(new Date(), 'DD-MM-YY HH:mm:ss:SSS')}`);
     init(roptions);
