@@ -1,11 +1,12 @@
 const request = require("request-promise");
 const cron = require('node-cron');
+const format = require('date-fns/format');
 const pool = require("./functions/rethinkdb");
 const r = require("rethinkdb");
 const roptions = require("./config.json").roptions;
-const format = require('date-fns/format');
 
-cron.schedule('30 * * * *', () => {
+
+cron.schedule('15-45 * * * *', () => {
     console.log(`=====================================================`);
     console.log(`Started renewing proxies at ${format(new Date(), 'DD-MM-YY HH:mm:ss:SSS')}`);
     init(roptions);
