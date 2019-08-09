@@ -3,7 +3,7 @@ const cron = require('node-cron');
 const format = require('date-fns/format');
 const pool = require("./functions/rethinkdb");
 const r = require("rethinkdb");
-const roptions = require("./config.json").roptions;
+const roptions = require("./config.js").roptions;
 
 
 cron.schedule('15-45 * * * *', () => {
