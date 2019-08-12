@@ -14,8 +14,8 @@ cron.schedule('15,45 * * * *', () => {
 });
 
 async function init(a) {
-    await clearTable();
     const data = await getProxyList(a);
+    await clearTable();
     await insertProxies(data);
 }
 
