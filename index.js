@@ -20,14 +20,14 @@ async function init(a) {
 }
 
 async function getProxyList(roptions) {
-    var data = await request(roptions);
+    let data = await request(roptions);
     data = data.split("\n");
     return data;
 }
 
 async function insertProxies(proxyList) {
     for (i = 0; i < proxyList.length; i++) {
-        var length = proxyList[i].length - 3;
+        let length = proxyList[i].length - 3;
         await pool.run(r.table("proxies").insert({ address: `${proxyList[i].substring(0, length)}` }));
     }
 }
